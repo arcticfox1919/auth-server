@@ -8,8 +8,7 @@ environment:
 
 dependencies:
   dart_jsonwebtoken: ^2.3.2
-  arowana:
-    path: G:\Repository\github\arowana
+  arowana: ^0.0.2
   sqlite3: ^1.2.0
   crypto: ^3.0.1
 #  path: ^1.8.0
