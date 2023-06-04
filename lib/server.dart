@@ -1,15 +1,14 @@
 import 'package:arowana/arowana.dart';
-import 'package:server/database.dart';
-import 'package:server/verifier.dart';
 
 import 'ctrl.dart';
+import 'database.dart';
+import 'verifier.dart';
 
-class MyAChannel extends DefaultChannel{
-
+class MyAChannel extends DefaultChannel {
   late SqliteDb db;
 
   @override
-  Future prepare() async{
+  Future prepare() async {
     db = SqliteDb.Connect();
   }
 
@@ -21,7 +20,7 @@ class MyAChannel extends DefaultChannel{
     var r = group('/info');
     r.use(Auth.bearer(AuthVerifier()));
 
-    r.get('/list', (request){
+    r.get('/list', (request) {
       return ResponseX.ok({
         'language': [
           {'id': 1, 'name': 'dart'},
@@ -34,4 +33,3 @@ class MyAChannel extends DefaultChannel{
     });
   }
 }
-

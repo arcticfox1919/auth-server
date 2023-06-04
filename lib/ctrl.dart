@@ -1,17 +1,14 @@
-
-
-
 import 'package:arowana/arowana.dart';
-import 'package:server/user.dart';
 
 import 'database.dart';
+import 'user.dart';
 
-class RegisterController{
+class RegisterController {
   SqliteDb db;
 
   RegisterController(this.db);
 
-  Future<Response> call(Request request)async{
+  Future<Response> call(Request request) async {
     var body = await request.body;
     var json = body.json;
     if (json != null) {
@@ -25,7 +22,7 @@ class RegisterController{
   }
 }
 
-class LoginController{
+class LoginController {
   SqliteDb db;
 
   LoginController(this.db);

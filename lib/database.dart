@@ -1,9 +1,11 @@
 import 'dart:ffi';
 
 import 'dart:io';
-import 'package:server/user.dart';
+
 import 'package:sqlite3/sqlite3.dart';
 import 'package:sqlite3/open.dart';
+
+import 'user.dart';
 
 DynamicLibrary _openOnWin() {
   final script = File(Platform.script.toFilePath()).parent;
@@ -25,7 +27,7 @@ class SqliteDb {
 
   SqliteDb.Connect() {
     open.overrideFor(OperatingSystem.windows, _openOnWin);
-    _db = sqlite3.open('db/data.db',mutex: false);
+    _db = sqlite3.open('db/data.db', mutex: false);
     _db.execute(_createTable);
   }
 

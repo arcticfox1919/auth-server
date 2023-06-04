@@ -1,4 +1,4 @@
-name: auth server
+name: auth_server
 description: arowana example.
 # version: 1.0.0
 # homepage: https://www.example.com
@@ -9,7 +9,7 @@ environment:
 dependencies:
   dart_jsonwebtoken: ^2.3.2
   arowana:
-    git: https://github.com/arcticfox1919/arowana.git
+    path: G:\Repository\github\arowana
   sqlite3: ^1.2.0
   crypto: ^3.0.1
 #  path: ^1.8.0
